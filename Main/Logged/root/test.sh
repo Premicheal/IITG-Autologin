@@ -1,5 +1,5 @@
 #!/bin/sh
-username="#########"   # replace uname with your username
+username="#########"   # replace username with your username
 password="#########"  # replace passwd with your password
 auth=`cat /root/key`
 alive=$(curl -s -k --max-time 10 "$auth" | grep -o "$auth")
