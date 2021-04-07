@@ -1,0 +1,2 @@
+*/2 * * * * /bin/sh /root/test.sh
+49 23 * * * /bin/sh /root/stat.sh
