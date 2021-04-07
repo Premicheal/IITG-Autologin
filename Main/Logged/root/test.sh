@@ -1,6 +1,6 @@
 #!/bin/sh
-username="#########"   # replace username with your username
-password="#########"  # replace passwd with your password
+username="#########"   # replace with your username
+password="#########"  # replace with your password
 auth=`cat /root/key`
 alive=$(curl -s -k --max-time 10 "$auth" | grep -o "$auth")
 time=$(date +%H:%M:%S::%d-%m-%Y)
