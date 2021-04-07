@@ -1,5 +1,5 @@
 # IITG-Autologin
-A BASH .sh script for automating the IITG internet access login portal for a smooth browsing experience inside the campus. Run the script on your Mac or Linux computer using cron. In login.sh / test.sh, set username and password to your IITG login credentials. Test the script by running ./login.sh from the terminal. The keepalive url should be appear in key and log. 
+A BASH .sh script for automating the IITG internet access login portal for a smooth browsing experience inside the campus. Run the script on your Mac or Linux computer using cron. In login.sh / test.sh, set username and password to your IITG login credentials. Test the script by running ./login.sh from the terminal. The keepalive url should appear in key and log. 
 # Normal Use
 Download and place all the files in the Normal sub-folder in their respective paths in the Linux directory structure. The login.sh script has to placed in the root directory since absolute paths are used. Make sure to tweak the script and the cron file if it is being run from a different location. 'key' contains the keepalive URL to be refreshed. 'log' is a log file of all the keepalive URLs received. Under optimal conditions URL changes are rare. Only a handful of entries are expected in a college semester.  
 # Diagnostics
