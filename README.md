@@ -1,20 +1,13 @@
 # IITG-Autologin
-A (BA)SH script for automating the IITG internet access login portal for a smooth browsing experience inside the campus.
-
-In login.sh / test.sh, set username and password to your IITG login credentials.
-# For normal use
-Download and place all the files in the Normal sub-folder in their respective paths in the Linux directory structure. The login.sh script has to placed in the root directory since absolute paths are used. Make sure to tweak the script and the cron file if it is being run from a different location.
-
->key contains the keepalive URL to be refreshed.
->log is a log file of all the keepalive URLs received. Under optimal conditions URL changes are rare. Only a handful of entries are expected in a college semester.
-  
-# For diagnostics
+A (BA)SH script for automating the IITG internet access login portal for a smooth browsing experience inside the campus. Run the script on your Mac or Linux computer using cron. In login.sh / test.sh, set username and password to your IITG login credentials.
+# Normal Use
+Download and place all the files in the Normal sub-folder in their respective paths in the Linux directory structure. The login.sh script has to placed in the root directory since absolute paths are used. Make sure to tweak the script and the cron file if it is being run from a different location. 'key' contains the keepalive URL to be refreshed. 'log' is a log file of all the keepalive URLs received. Under optimal conditions URL changes are rare. Only a handful of entries are expected in a college semester.  
+# Diagnostics
 Download and place all the files in the Logged sub-folder in their repesctive paths in the Linux directory structure. The test.sh script has to placed in the root directory since absolute paths are used. Make sure to tweak the script and the cron file if it is being run from a different location. After normal connectivity is restored, change 'test.sh' in etc/crontabs/root to 'login.sh' and delete the second line in the file. 
->count contains the total number of times the refresh failed today.
->daily_log has the number of failed refreshes per day.
->fail contains the exact times when the refresh failed. It may be necessary to clear this file often (with a cron entry) on very low memory devices.
->fcount contains a non-zero value if the script failed on the latest run. The number refers to the prior consecutive failures.
 
+'count' contains the total number of times the refresh failed today. 'daily_log' has the number of failed refreshes per day. 'fail' contains the exact times when the refresh failed. It may be necessary to clear this file often (with a cron entry) on very low memory devices. 'fcount' contains a non-zero value if the script failed on the latest run. The number refers to the prior consecutive failures.
+
+# Recommendations
 It is recommended to run the normal script once every 10 minutes using a cron script, the logged script can be run as often as every minute. It is not recommended since we do not know the capabilities of the servers.
 
 Edit etc/crontabs/root and add "*/10 * * * * /bin/sh /root/login.sh" (No "").
